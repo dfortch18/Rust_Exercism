@@ -1,3 +1,13 @@
+mod exercism;
+
+fn print_separator() {
+    println!("-----------------------------------------");
+}
+
 fn main() {
-    println!("Hello, world!");
+    print_separator();
+
+    println!("{}", exercism::hello::hello());
+
+    print_separator();
 }
