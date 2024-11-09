@@ -1,5 +1,8 @@
 mod exercism;
-use exercism::clock::Clock;
+use exercism::{
+    clock::Clock,
+    space_age::{Duration, Earth, Jupiter, Mars, Mercury, Neptune, Planet, Saturn, Uranus, Venus},
+};
 
 fn print_separator() {
     println!("-----------------------------------------");
@@ -162,6 +165,44 @@ fn main() {
             clocks[0],
             clocks[1],
             clocks[0].eq(&clocks[1])
+        );
+    }
+
+    print_separator();
+
+    // Space Age
+    let space_age_planets: Vec<Box<dyn Planet>> = vec![
+        Box::new(Earth),
+        Box::new(Mercury),
+        Box::new(Venus),
+        Box::new(Mars),
+        Box::new(Jupiter),
+        Box::new(Saturn),
+        Box::new(Uranus),
+        Box::new(Neptune),
+    ];
+    let space_age_seconds_inputs = [
+        1_000_000_000,
+        2_134_835_688,
+        189_839_836,
+        2_129_871_239,
+        901_876_382,
+        2_000_000_000,
+        1_210_123_456,
+        1_821_023_456,
+    ];
+
+    for (planet, seconds) in space_age_planets
+        .iter()
+        .zip(space_age_seconds_inputs.iter())
+    {
+        let duration = Duration::from(*seconds);
+        let age = planet.as_ref().years_during(&duration);
+        println!(
+            "Age of planet ({}) duration ({:?}): {} years",
+            planet.as_ref().name(),
+            duration,
+            age
         );
     }
 
