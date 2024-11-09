@@ -23,10 +23,12 @@ fn datetime(
 fn main() {
     print_separator();
 
+    // Hello, World!
     println!("{}", exercism::hello::hello());
 
     print_separator();
 
+    // Reverse String
     let reverse_string_inputs = vec![
         "robot",
         "Ramen",
@@ -48,6 +50,7 @@ fn main() {
 
     print_separator();
 
+    // Gigasecond
     let gigasecond_inputs = vec![
         datetime(2011, 4, 25, 0, 0, 0),
         datetime(1977, 6, 13, 0, 0, 0),
@@ -66,6 +69,7 @@ fn main() {
 
     print_separator();
 
+    // Clock
     let clock_new_inputs = [
         [8, 0],
         [11, 9],
