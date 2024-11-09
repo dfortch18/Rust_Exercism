@@ -29,7 +29,7 @@ fn main() {
     print_separator();
 
     // Reverse String
-    let reverse_string_inputs = vec![
+    let reverse_string_inputs = [
         "robot",
         "Ramen",
         "I'm hungry!",
@@ -51,7 +51,7 @@ fn main() {
     print_separator();
 
     // Gigasecond
-    let gigasecond_inputs = vec![
+    let gigasecond_inputs = [
         datetime(2011, 4, 25, 0, 0, 0),
         datetime(1977, 6, 13, 0, 0, 0),
         datetime(1959, 7, 19, 0, 0, 0),
